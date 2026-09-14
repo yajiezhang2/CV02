@@ -4,7 +4,7 @@ export const portfolioData = {
     availability: '2024 · 正在接洽新项目',
     location: '中国香港',
     currentFocus: '数字产品与品牌体验',
-    title: '把复杂的事情\n做简单',
+    title: '产品设计背景，\n艺术科技与商业硕士在读。\n精通 Rhino、KeyShot、Photoshop 等设计工具，拥有市场调研、实体勘查、珠宝社交媒体运营、数据处理实习经验。\n爱好内容创作、艺术观展、摄影及手工陶艺花艺，擅长结合艺术创意、科技视角与商业思维，完成设计、推广与落地相关工作。',
     intro: 'Tel:+86 13186690709\nEmail: yajiezhang1@163.com',
     statement: '我相信设计不是最后那一层装饰，而是从问题被看见的那一刻，就开始参与其中。过去 8 年，我和创业者、团队以及文化机构一起，把复杂的系统变成清晰的产品，把有趣的品牌变成真实的连接。',
     experience: [
