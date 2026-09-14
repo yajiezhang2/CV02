@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="林野的个人作品集与简历" />
+  <title>林野 / Independent Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="返回顶部"><span class="brand-mark">LY</span><span>LIN YE</span></a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#work">作品 <span>01</span></a>
+      <a href="#about">关于 <span>02</span></a>
+      <a href="#notes">动态 <span>03</span></a>
+    </nav>
+    <a class="header-contact" href="mailto:hello@linye.studio">联系我 <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-kicker"><span class="status-dot"></span><span id="availability"></span></div>
+      <div class="hero-copy">
+        <p class="eyebrow">设计 × 技术 × 人</p>
+        <h1 id="hero-title"></h1>
+        <p class="hero-intro" id="hero-intro"></p>
+      </div>
+      <div class="hero-foot">
+        <a class="circle-link" href="#work" aria-label="查看作品"><span>↓</span></a>
+        <div class="hero-meta"><span>BASE</span><strong id="location"></strong></div>
+        <div class="hero-meta"><span>NOW</span><strong id="current-focus"></strong></div>
+      </div>
+    </section>
+
+    <section id="work" class="work-section section-shell">
+      <div class="section-heading">
+        <div><p class="eyebrow">Selected work / 01</p><h2>把复杂的事，<em>做得清楚。</em></h2></div>
+        <p class="section-note">从策略到界面，从一个想法到一件真正被使用的产品。</p>
+      </div>
+      <div class="filter-row" id="work-filters" aria-label="作品分类"></div>
+      <div class="project-grid" id="project-grid"></div>
+    </section>
+
+    <section id="about" class="about-section section-shell">
+      <div class="section-heading compact"><div><p class="eyebrow">Profile / 02</p><h2>不只做漂亮的<br /><em>表面。</em></h2></div></div>
+      <div class="about-layout">
+        <div class="about-statement" id="about-statement"></div>
+        <div class="about-details">
+          <div class="detail-block"><span class="detail-label">Experience</span><div id="experience-list"></div></div>
+          <div class="detail-block"><span class="detail-label">Capabilities</span><div class="tag-list" id="capability-list"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="notes" class="notes-section section-shell">
+      <div class="section-heading compact"><div><p class="eyebrow">Latest notes / 03</p><h2>最近在想<br /><em>什么。</em></h2></div><a class="text-link" href="mailto:hello@linye.studio">一起聊聊 <span>↗</span></a></div>
+      <div class="notes-list" id="notes-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell"><div class="footer-top"><span class="brand-mark">LY</span><span>© <span id="year"></span> LIN YE STUDIO</span><a href="#top">回到顶部 ↑</a></div><div class="footer-bottom"><span>AVAILABLE FOR SELECTED PROJECTS</span><a href="mailto:hello@linye.studio">hello@linye.studio</a><div class="social-links"><a href="#" aria-label="Behance">BE</a><a href="#" aria-label="小红书">小红</a><a href="#" aria-label="LinkedIn">LI</a></div></div></footer>
+  <div class="project-modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden><div class="modal-backdrop" data-close-modal></div><article class="modal-card"><button class="modal-close" type="button" data-close-modal aria-label="关闭">×</button><div class="modal-visual" id="modal-visual"></div><div class="modal-content"><p class="eyebrow" id="modal-category"></p><h2 id="modal-title"></h2><p id="modal-description"></p><div class="modal-facts" id="modal-facts"></div></div></article></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
