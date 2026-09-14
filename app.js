@@ -35,7 +35,11 @@ function renderProjects(filter = '全部') {
 }
 
 function renderNotes() {
-  $('#notes-list').innerHTML = notes.map((note) => `<article class="note-item"><span class="note-date">${escapeHtml(note.date)}</span><span class="note-type">${escapeHtml(note.type)}</span><h3>${escapeHtml(note.title)}</h3><span class="note-arrow">↗</span></article>`).join('');
+  $('#notes-list').innerHTML = notes.map((note) => `<article class="note-item ${note.link ? 'is-linked' : ''}" ${note.link ? `data-link="${escapeHtml(note.link)}" tabindex="0"` : ''}><span class="note-date">${escapeHtml(note.date)}</span><span class="note-type">${escapeHtml(note.type)}</span><h3>${escapeHtml(note.title)}</h3><span class="note-arrow">↗</span></article>`).join('');
+  document.querySelectorAll('.note-item[data-link]').forEach((note) => {
+    note.addEventListener('click', () => { window.location.href = note.dataset.link; });
+    note.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') window.location.href = note.dataset.link; });
+  });
 }
 
 function openModal(projectId) {
@@ -55,6 +59,39 @@ function closeModal() {
   document.body.classList.remove('modal-open');
 }
 
+function setupBubbleTrail() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const layer = document.createElement('div');
+  const colors = ['#f7b7c8', '#b9d9f2', '#f8d58c', '#c8e6c9', '#d8c7f1'];
+  let lastBubbleTime = 0;
+
+  layer.className = 'bubble-trail';
+  layer.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(layer);
+
+  document.addEventListener('mousemove', (event) => {
+    const now = performance.now();
+    if (now - lastBubbleTime < 55) return;
+    lastBubbleTime = now;
+
+    const bubble = document.createElement('span');
+    const size = 8 + Math.random() * 16;
+    bubble.className = 'trail-bubble';
+    bubble.style.left = `${event.clientX - size / 2}px`;
+    bubble.style.top = `${event.clientY - size / 2}px`;
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    bubble.style.setProperty('--drift-x', `${(Math.random() - .5) * 46}px`);
+    bubble.style.setProperty('--drift-y', `${-34 - Math.random() * 48}px`);
+    bubble.style.animationDuration = `${2600 + Math.random() * 700}ms`;
+    layer.appendChild(bubble);
+
+    if (layer.childElementCount > 22) layer.firstElementChild.remove();
+    bubble.addEventListener('animationend', () => bubble.remove(), { once: true });
+  }, { passive: true });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderProfile();
   renderFilters();
@@ -64,4 +101,5 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-close-modal]').forEach((element) => element.addEventListener('click', closeModal));
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeModal(); });
   document.addEventListener('mousemove', (event) => { document.documentElement.style.setProperty('--mouse-x', `${event.clientX}px`); document.documentElement.style.setProperty('--mouse-y', `${event.clientY}px`); });
+  setupBubbleTrail();
 });
