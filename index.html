@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="林野的个人作品集与简历" />
-  <title>林野 / Independent Designer</title>
+  <meta name="description" content="张雅婕的个人简历与设计作品集" />
+  <title>张雅婕 / Independent Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { colors: { jetDark: '#312726', jetCream: '#FFF8ED', jetTextDark: '#1A1413', jetLightGray: '#E5E2DE', jetSky: '#B8D8F0' } } } };</script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -15,56 +17,74 @@
   <header class="site-header">
     <a class="brand" href="#top" aria-label="返回顶部"><span class="brand-mark">ZY</span><span>ZHANG YAJIE</span></a>
     <nav class="main-nav" aria-label="主导航">
-      <a href="#work">作品 <span>01</span></a>
-      <a href="app.html">App <span>02</span></a>
-      <a href="#about">关于 <span>03</span></a>
-      <a href="#notes">动态 <span>04</span></a>
+      <a href="#profile">简介 <span>01</span></a>
+      <a href="#education">教育 <span>02</span></a>
+      <a href="#experience">经历 <span>03</span></a>
+      <a href="#projects">成果 <span>04</span></a>
     </nav>
-    <a class="header-contact" href="mailto:hello@linye.studio">联系我 <span>↗</span></a>
+    <a class="header-contact" href="mailto:yajiezhang1@163.com">联系我 <span>↗</span></a>
   </header>
 
   <main id="top">
-    <section class="hero section-shell">
-      <div class="hero-kicker"><span class="status-dot"></span><span id="availability"></span></div>
-      <div class="hero-copy">
-        <p class="eyebrow">设计 × 技术 × 人</p>
-        <h1 id="hero-title"></h1>
-        <p class="hero-intro" id="hero-intro"></p>
+    <section class="resume-hero">
+      <div class="hero-inner section-shell">
+        <div class="hero-kicker"><span class="status-dot"></span><span id="availability"></span></div>
+        <div class="hero-main">
+          <p class="eyebrow">Independent designer / Hong Kong</p>
+          <h1><span class="hero-name">张雅婕</span><span class="hero-role">Product / Brand / Experience</span></h1>
+          <p class="hero-title" id="hero-title"></p>
+        </div>
+        <div class="hero-bottom">
+          <a class="hero-button" href="#profile">探索简历 <span>↓</span></a>
+          <div class="hero-meta"><span>BASE</span><strong id="location"></strong></div>
+          <div class="hero-meta"><span>FOCUS</span><strong id="current-focus"></strong></div>
+        </div>
       </div>
-      <div class="hero-foot">
-        <a class="circle-link" href="#work" aria-label="查看作品"><span>↓</span></a>
-        <div class="hero-meta"><span>BASE</span><strong id="location"></strong></div>
-        <div class="hero-meta"><span>NOW</span><strong id="current-focus"></strong></div>
+      <div class="hero-orbit" aria-hidden="true"><span>01</span><i></i></div>
+    </section>
+
+    <section id="profile" class="cream-section section-shell reveal-section">
+      <div class="section-label"><span>01 / PROFILE</span><span>DESIGN × TECHNOLOGY × PEOPLE</span></div>
+      <div class="profile-layout">
+        <div><p class="section-kicker">A considered point of view</p><h2>个人简历</h2></div>
+        <div class="profile-copy"><p id="about-statement"></p><p class="contact-copy" id="hero-intro"></p></div>
+      </div>
+      <div class="stat-grid">
+        <article class="stat-card"><span>01</span><strong>8+</strong><p>年设计与创意相关经验</p></article>
+        <article class="stat-card"><span>02</span><strong>04</strong><p>跨产品、品牌与文化项目</p></article>
+        <article class="stat-card"><span>03</span><strong>06</strong><p>项核心能力与工作方法</p></article>
+        <article class="stat-card stat-card-dark"><span>04</span><strong>HK</strong><p>中国香港 / 远程协作</p></article>
       </div>
     </section>
 
-    <section id="work" class="work-section section-shell">
-      <div class="section-heading">
-        <div><p class="eyebrow">Selected work / 01</p><h2>把复杂的事，<em>做得清楚。</em></h2></div>
-        <p class="section-note">从策略到界面，从一个想法到一件真正被使用的产品。</p>
+    <section id="education" class="dark-section section-shell reveal-section">
+      <div class="section-label"><span>02 / EDUCATION</span><span>BACKGROUND &amp; TOOLS</span></div>
+      <div class="two-column-heading"><h2>在学习中<br /><em>保持好奇。</em></h2><p>用艺术创意、科技视角与商业思维，完成设计、推广与落地相关工作。</p></div>
+      <div class="education-grid">
+        <article class="education-item"><span class="item-index">01</span><div><p class="item-year">CURRENT</p><h3>艺术科技与商业硕士</h3><p>在读 · 关注艺术、技术与商业之间的交叉关系。</p></div></article>
+        <article class="education-item"><span class="item-index">02</span><div><p class="item-year">FOUNDATION</p><h3>产品设计背景</h3><p>熟练使用 Rhino、KeyShot、Photoshop 等设计工具。</p></div></article>
       </div>
-      <div class="filter-row" id="work-filters" aria-label="作品分类"></div>
+      <div class="capability-line"><span>CAPABILITIES</span><div class="capability-list" id="capability-list"></div></div>
+    </section>
+
+    <section id="experience" class="cream-section section-shell reveal-section">
+      <div class="section-label"><span>03 / EXPERIENCE</span><span>SELECTED ROLES</span></div>
+      <div class="accordion-layout"><div><p class="section-kicker">Work in progress</p><h2>实习经历</h2></div><div class="accordion" id="experience-list"></div></div>
+    </section>
+
+    <section id="projects" class="dark-section section-shell reveal-section">
+      <div class="section-label"><span>04 / SELECTED WORK</span><span>2021 — 2024</span></div>
+      <div class="project-heading"><h2>成果</h2><p>从策略到界面，从一个想法到一件真正被使用的产品。</p></div>
       <div class="project-grid" id="project-grid"></div>
     </section>
 
-    <section id="about" class="about-section section-shell">
-      <div class="section-heading compact"><div><p class="eyebrow">Profile / 02</p><h2>不只做漂亮的<br /><em>表面。</em></h2></div></div>
-      <div class="about-layout">
-        <div class="about-statement" id="about-statement"></div>
-        <div class="about-details">
-          <div class="detail-block"><span class="detail-label">Experience</span><div id="experience-list"></div></div>
-          <div class="detail-block"><span class="detail-label">Capabilities</span><div class="tag-list" id="capability-list"></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="notes" class="notes-section section-shell">
-      <div class="section-heading compact"><div><p class="eyebrow">Latest notes / 03</p><h2>实习经历</h2></div><a class="text-link" href="mailto:hello@linye.studio">一起聊聊 <span>↗</span></a></div>
-      <div class="notes-list" id="notes-list"></div>
+    <section class="contact-section section-shell reveal-section">
+      <p class="section-kicker">Start a conversation</p><h2>期望和我联系</h2>
+      <a class="contact-link" href="mailto:yajiezhang1@163.com">yajiezhang1@163.com <span>↗</span></a>
     </section>
   </main>
 
-  <footer class="site-footer section-shell"><div class="footer-top"><span class="brand-mark">LY</span><span>© <span id="year"></span> LIN YE STUDIO</span><a href="#top">回到顶部 ↑</a></div><div class="footer-bottom"><span>AVAILABLE FOR SELECTED PROJECTS</span><a href="mailto:hello@linye.studio">hello@linye.studio</a><div class="social-links"><a href="#" aria-label="Behance">BE</a><a href="#" aria-label="小红书">小红</a><a href="#" aria-label="LinkedIn">LI</a></div></div></footer>
+  <footer class="site-footer section-shell"><div class="footer-top"><span class="brand-mark">LY</span><span>© <span id="year"></span> LIN YE STUDIO</span><a href="#top">回到顶部 ↑</a></div><div class="footer-bottom"><span>AVAILABLE FOR SELECTED PROJECTS</span><a href="tel:+8613186690709">+86 13186690709</a><a href="mailto:yajiezhang1@163.com">yajiezhang1@163.com</a></div></footer>
   <div class="project-modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden><div class="modal-backdrop" data-close-modal></div><article class="modal-card"><button class="modal-close" type="button" data-close-modal aria-label="关闭">×</button><div class="modal-visual" id="modal-visual"></div><div class="modal-content"><p class="eyebrow" id="modal-category"></p><h2 id="modal-title"></h2><p id="modal-description"></p><div class="modal-facts" id="modal-facts"></div></div></article></div>
   <script type="module" src="app.js"></script>
 </body>
